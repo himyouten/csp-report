@@ -1,0 +1,20 @@
+// log for csp-report
+{
+  // Log files to upload to Scalyr. You can use '*' wildcards here.
+  logs: [
+    {
+      path: "/var/log/nginx/csp-report.log",
+      attributes: {
+        src: "csp-report",
+        parser: "cspReport"
+      },
+      redaction_rules: [
+        // replace \x22 with '"'
+        {
+          match_expression: "\\\\x22",
+          replacement: "\""
+      },
+      ],
+    },
+  ],
+}
