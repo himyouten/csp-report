@@ -1,0 +1,9 @@
+{
+  formats: [
+    {
+      id: "csp_report_log",
+      format: "\\[$timestamp$\\] $remoteIp$ $referrer=quotable$ $report{parse=json}$",
+      halt: true,
+    },
+  ],
+}
