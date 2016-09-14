@@ -1,6 +1,7 @@
 # CSP Report consumer
+[CSP or Content Security Policy](https://www.owasp.org/index.php/Content_Security_Policy) is a computer security standard that prevents cross-site scripting (XSS), click jacking, malicious third-party script includes, and other code injection attacks. One of the features of CSP is the `report-uri`. Compliant client browsers will make a POST with detailed report whenever your policy is violated. Unfortunately there aren't any out of the box solutions to receive and handle the `report-uri`.
 
-The CSP Report consumer is an http endpoint that the report-uri can use.  It simply writes the json payload to a log file to be processed by any log analysis system, e.g. Scalyr.  We had used a 3rd party report service but we overloaded their thresholds so were not getting reports.  The added advantage of setting up our own CSP report consumer was that it keeps everything internal, albeit using an log aggregator service.
+The CSP Report consumer is an http endpoint that the `report-uri` can use.  It simply writes the json payload to a log file to be processed by any log analysis system, e.g. Scalyr.  We had used a 3rd party report service but we overloaded their thresholds so were not getting reports.  The added advantage of setting up our own CSP report consumer was that it keeps everything internal, albeit using an log aggregator service.
 
 The CSP report consumer is just an Nginx server block config.  [Nginx](http://nginx.org/en/) is an extremely versatile HTTP server.
 
